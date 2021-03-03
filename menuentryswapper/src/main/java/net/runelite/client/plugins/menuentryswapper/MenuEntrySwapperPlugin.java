@@ -340,11 +340,6 @@ public class MenuEntrySwapperPlugin extends Plugin
 		{
 			String option = Text.removeTags(entry.getOption()).toLowerCase();
 
-			if (option.contains("examine") && config.hideExamine())
-			{
-				continue;
-			}
-
 			if (option.contains("net") && config.hideNet())
 			{
 				continue;
@@ -803,6 +798,7 @@ public class MenuEntrySwapperPlugin extends Plugin
 
 		if (config.swapTrade())
 		{
+			// NOTE: this doesn't swap on players, the option on players is "Trade with", note the space
 			menuManager.addPriorityEntry("Trade").setPriority(1);
 			menuManager.addPriorityEntry("Trade-with").setPriority(1);
 			menuManager.addPriorityEntry("Shop").setPriority(1);
